@@ -1,6 +1,5 @@
-import { db } from './db';
-
-export const insertIngredient = async (ingredient) => {
+import { db } from "./db.js"
+export const insertIngredient = async(ingredient)=>{
     const connection = db.getConnection();
-    await connection.collection('ingredients').insertOne(ingredient);
+    await connection.collection('Ingredients').insert(ingredient);
 }

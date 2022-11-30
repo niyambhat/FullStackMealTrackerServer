@@ -1,13 +1,17 @@
 import express from 'express';
+import cors from "cors"
 import { db } from './db/db.js';
 import { routes } from './routes/index.js';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 routes.forEach(route => {
   app[route.method]('/api' + route.path, route.handler);
 });
+
+
 
 const start = async () => {
     await db.connect();
