@@ -1,5 +1,4 @@
 import { getPopulatedMeals } from "../db/getPopulatedMeals.js";
-import { getMeal } from "../db/getMeal.js";
 
 export const getMealsRoute = {
     method:"get",

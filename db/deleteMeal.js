@@ -1,6 +1,7 @@
 import { db } from "./db.js";
+import { ObjectId } from 'mongodb';
 
-export const deleteMeal = async(mealName)=>{
-    const conn= db.getConnection();
-    await conn.collections('meals').delete({name:mealName});
+export const deleteMeal = async(mealId)=>{
+    const connection = db.getConnection();
+    await connection.collection('meals').deleteOne({ _id: ObjectId(mealId) });
 }

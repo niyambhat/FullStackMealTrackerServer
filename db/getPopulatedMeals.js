@@ -7,7 +7,7 @@ export const getPopulatedMeals = async () => {
     const recipes = await getRecipes();
     const populatedMeals = meals.map(meal=>({
         ...meal,
-        recipie:recipes.filter(recipe=> recipe.id === meal.recipieId)    
+        recipie:recipes.find(recipe=> recipe.id === meal.recipieId)    
             }
         ))
     return populatedMeals;
